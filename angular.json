@@ -75,7 +75,8 @@
               "browserTarget": "contacts-ui-angular:build:production"
             },
             "development": {
-              "browserTarget": "contacts-ui-angular:build:development"
+              "browserTarget": "contacts-ui-angular:build:development",
+              "proxyConfig": "proxy.config.json"
             }
           },
           "defaultConfiguration": "development"
