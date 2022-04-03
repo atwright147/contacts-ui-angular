@@ -1,0 +1,37 @@
+<div class="nav">
+  <a class="nav-item" href="/">
+    <mat-icon>home</mat-icon>
+  </a>
+
+  <a class="nav-item" href="/messages">
+    <mat-icon>forum</mat-icon>
+  </a>
+
+  <a class="nav-item" href="/calls">
+    <mat-icon>phone</mat-icon>
+  </a>
+
+  <a class="nav-item" href="/contacts">
+    <mat-icon>group</mat-icon>
+  </a>
+
+  <a class="nav-item" href="/calendar">
+    <mat-icon>date_range</mat-icon>
+  </a>
+
+  <a class="nav-item" href="/settings">
+    <mat-icon>settings</mat-icon>
+  </a>
+
+  <ng-container *ngIf="isLoggedIn">
+    <a class="nav-item" (click)="handleLogout">
+      <mat-icon>lock_open</mat-icon>
+    </a>
+  </ng-container>
+
+  <ng-container *ngIf="!isLoggedIn">
+    <a class="nav-item" (click)="handleLogin">
+      <mat-icon>lock_outline</mat-icon>
+    </a>
+  </ng-container>
+</div>
