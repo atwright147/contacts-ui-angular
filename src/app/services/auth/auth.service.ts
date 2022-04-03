@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NgForm } from '@angular/forms';
 
 export interface AuthCreds {
   email: string;
@@ -12,6 +11,8 @@ export interface AuthCreds {
 })
 export class AuthService {
   private readonly loginUrl = '/api/v1/auth/login';
+  private readonly logoutUrl = '/api/v1/auth/login';
+  public readonly isLoggedIn = false;
 
   constructor(
     private readonly http: HttpClient,
@@ -19,5 +20,9 @@ export class AuthService {
 
   login(creds: AuthCreds) {
     return this.http.post(this.loginUrl, creds);
+  }
+
+  logout() {
+    return this.http.get(this.loginUrl);
   }
 }

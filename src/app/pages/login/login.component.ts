@@ -8,7 +8,7 @@ import { AuthCreds, AuthService } from '../../services/auth/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  email = 'Dan67@example.com';
+  email = 'admin@example.com';
   password = 'password';
 
   constructor(
