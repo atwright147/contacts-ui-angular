@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -6,6 +6,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
+import { CustomErrorHandler } from './shared/error-handler/error-handler';
 
 import { AppComponent } from './app.component';
 import { ContactsListComponent } from './components/contacts-list/contacts-list.component';
@@ -37,7 +38,9 @@ const materialModules = [
     NoopAnimationsModule,
     ...materialModules,
   ],
-  providers: [],
+  providers: [
+    { provide: ErrorHandler, useClass: CustomErrorHandler },
+  ],
   bootstrap: [
     AppComponent,
   ],
