@@ -14,7 +14,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { ContactDetailsComponent } from './components/contact-details/contact-details.component';
-import { LengthPipe } from './pipes/length/length.pipe';
+import { BoolPipe, LengthPipe, NegatePipe, TrueOrNullPipe } from './pipes';
 
 const materialModules = [
   MatIconModule
@@ -28,7 +28,10 @@ const materialModules = [
     NavComponent,
     ContactsComponent,
     ContactDetailsComponent,
+    BoolPipe,
     LengthPipe,
+    NegatePipe,
+    TrueOrNullPipe,
   ],
   imports: [
     BrowserModule,
