@@ -23,6 +23,6 @@ export class AuthService {
   }
 
   logout() {
-    return this.http.get(this.loginUrl);
+    return this.http.get(this.logoutUrl);
   }
 }

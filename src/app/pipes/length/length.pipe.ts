@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'length'
 })
 export class LengthPipe implements PipeTransform {
-  transform(value: unknown, ...args: unknown[]): number {
+  transform(value: unknown): number {
     switch (typeof value) {
       case 'object':
         return Object.keys(value).length;
