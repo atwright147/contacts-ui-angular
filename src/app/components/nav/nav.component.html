@@ -1,36 +1,36 @@
 <div class="nav">
-  <a class="nav-item" routerLink="/">
+  <a class="nav-item" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
     <mat-icon>home</mat-icon>
   </a>
 
-  <a class="nav-item" routerLink="/messages">
+  <a class="nav-item" routerLink="/messages" routerLinkActive="active">
     <mat-icon>forum</mat-icon>
   </a>
 
-  <a class="nav-item" routerLink="/calls">
+  <a class="nav-item" routerLink="/calls" routerLinkActive="active">
     <mat-icon>phone</mat-icon>
   </a>
 
-  <a class="nav-item" routerLink="/contacts">
+  <a class="nav-item" routerLink="/contacts" routerLinkActive="active">
     <mat-icon>group</mat-icon>
   </a>
 
-  <a class="nav-item" routerLink="/calendar">
+  <a class="nav-item" routerLink="/calendar" routerLinkActive="active">
     <mat-icon>date_range</mat-icon>
   </a>
 
-  <a class="nav-item" routerLink="/settings">
+  <a class="nav-item" routerLink="/settings" routerLinkActive="active">
     <mat-icon>settings</mat-icon>
   </a>
 
   <ng-container *ngIf="isLoggedIn">
-    <a class="nav-item" routerLink="/logout">
+    <a class="nav-item" routerLink="/logout" routerLinkActive="active">
       <mat-icon>lock_open</mat-icon>
     </a>
   </ng-container>
 
   <ng-container *ngIf="!isLoggedIn">
-    <a class="nav-item" routerLink="/login">
+    <a class="nav-item" routerLink="/login" routerLinkActive="active">
       <mat-icon>lock_outline</mat-icon>
     </a>
   </ng-container>
