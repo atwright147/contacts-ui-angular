@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { ContactsService } from '../../services/contacts/contacts.service';
 
@@ -7,14 +7,10 @@ import { ContactsService } from '../../services/contacts/contacts.service';
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.scss']
 })
-export class ContactsComponent implements OnInit {
+export class ContactsComponent {
   readonly selected$ = this.contactsService.selected$;
 
   constructor(
     private readonly contactsService: ContactsService,
   ) { }
-
-  ngOnInit(): void {
-    this.contactsService.get().subscribe();
-  }
 }
