@@ -1,0 +1,72 @@
+<ul class="contacts-list">
+  <li
+    *ngFor="let contact of contacts$ | async"
+    (click)="select(contact)"
+    class="contact"
+  >
+    <img src="/api/v1/avatar/{{contact.id}}" alt="" class="avatar">
+    <div class="container">
+      <div class="details">
+        <p class="name">{{contact.firstName}}&nbsp;{{contact.lastName}}</p>
+        <p class="email">{{contact.jobTitle}}</p>
+      </div>
+
+      <div class="buttons">
+        <button type="button" class="btn btn-icon">
+          <mat-icon>forum</mat-icon>
+        </button>
+        <button type="button" class="btn btn-icon">
+          <mat-icon>phone</mat-icon>
+        </button>
+        <button
+          type="button"
+          class="btn btn-icon"
+          (click)="handleContextMenu(contact.id)"
+        >
+          <span class="icon">
+            <mat-icon>more_horiz</mat-icon>
+          </span>
+        </button>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<!--
+<hr>
+
+<pre>{{selected$ | async | json}}</pre>
+
+<div *ngIf="selected$ | async as contact">
+  <p>{{contact.firstName}}</p>
+</div> -->
+
+<!-- {#if $contactsStore.length}
+	<ul class="contacts-list">
+		{#each $contactsStore as contact}
+			<li class="contact" on:click={() => handleClick(contact)}>
+				<div class="container">
+					<img src="/api/v1/avatar/{contact.id}" alt="" class="avatar">
+					<div class="details">
+						<p class="name">{contact.firstName}&nbsp;{contact.lastName}</p>
+						<p class="email">{contact.jobTitle}</p>
+					</div>
+				</div>
+
+				<div class="buttons">
+					<button type="button" class="btn btn-icon"><MdForum /></button>
+					<button type="button" class="btn btn-icon"><MdPhone /></button>
+					<button
+						type="button"
+						class="btn btn-icon"
+						on:click|preventDefault|stopPropagation={(event) => handleContextMenu(event, contact.id)}
+					>
+						<span class="icon"><MdMoreHoriz /></span>
+					</button>
+				</div>
+			</li>
+		{/each}
+	</ul>
+{:else}
+	<p>No contacts</p>
+{/if} -->
