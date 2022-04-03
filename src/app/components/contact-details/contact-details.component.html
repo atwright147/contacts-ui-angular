@@ -1,0 +1,47 @@
+<!-- async if else with empty object -->
+
+<ng-container *ngIf="(selected$ | async) as contact">
+  <div class="container">
+    <section class="head">
+      <img src="/api/v1/avatar/{{contact.id}}" alt="" class="avatar">
+
+      <div class="details">
+        <p class="name">{{contact.firstName}}&nbsp;{{contact.lastName}}</p>
+        <p class="email">{{contact.jobTitle}}</p>
+
+        <div class="buttons">
+          <Button motif="primary">
+            <mat-icon>forum</mat-icon>
+            Message
+          </Button>
+
+          <Button>
+            <mat-icon>phone</mat-icon>
+          </Button>
+
+          <Button>
+            <mat-icon>share</mat-icon>
+          </Button>
+
+          <Button>
+            <mat-icon>more_horiz</mat-icon>
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <!--
+    <div class="detail-items">
+			<ContactDetailsItem label="Bio">
+				<ContactDetailsItemContent content={$contact.bio} />
+			</ContactDetailsItem>
+			<ContactDetailsItem label="Email">
+				<ContactDetailsItemContent content={$contact.emails} key="email" />
+			</ContactDetailsItem>
+			<ContactDetailsItem label="Address">
+				<ContactDetailsItemAddresses addresses={$contact.addresses} />
+			</ContactDetailsItem>
+		</div>
+    -->
+  </div>
+</ng-container>

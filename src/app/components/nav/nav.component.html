@@ -1,36 +1,36 @@
 <div class="nav">
-  <a class="nav-item" href="/">
+  <a class="nav-item" routerLink="/">
     <mat-icon>home</mat-icon>
   </a>
 
-  <a class="nav-item" href="/messages">
+  <a class="nav-item" routerLink="/messages">
     <mat-icon>forum</mat-icon>
   </a>
 
-  <a class="nav-item" href="/calls">
+  <a class="nav-item" routerLink="/calls">
     <mat-icon>phone</mat-icon>
   </a>
 
-  <a class="nav-item" href="/contacts">
+  <a class="nav-item" routerLink="/contacts">
     <mat-icon>group</mat-icon>
   </a>
 
-  <a class="nav-item" href="/calendar">
+  <a class="nav-item" routerLink="/calendar">
     <mat-icon>date_range</mat-icon>
   </a>
 
-  <a class="nav-item" href="/settings">
+  <a class="nav-item" routerLink="/settings">
     <mat-icon>settings</mat-icon>
   </a>
 
   <ng-container *ngIf="isLoggedIn">
-    <a class="nav-item" (click)="handleLogout">
+    <a class="nav-item" routerLink="/logout">
       <mat-icon>lock_open</mat-icon>
     </a>
   </ng-container>
 
   <ng-container *ngIf="!isLoggedIn">
-    <a class="nav-item" (click)="handleLogin">
+    <a class="nav-item" routerLink="/login">
       <mat-icon>lock_outline</mat-icon>
     </a>
   </ng-container>

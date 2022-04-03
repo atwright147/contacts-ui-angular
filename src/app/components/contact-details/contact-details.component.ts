@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ContactsService } from '../../services/contacts/contacts.service';
+import { Contact } from '../../types/contact.types';
 
 @Component({
-  selector: 'app-contacts',
-  templateUrl: './contacts.component.html',
-  styleUrls: ['./contacts.component.scss']
+  selector: 'app-contact-details',
+  templateUrl: './contact-details.component.html',
+  styleUrls: ['./contact-details.component.scss']
 })
-export class ContactsComponent implements OnInit {
+export class ContactDetailsComponent implements OnInit {
   readonly selected$ = this.contactsService.selected$;
 
   constructor(
@@ -15,6 +16,6 @@ export class ContactsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.contactsService.get().subscribe();
   }
+
 }

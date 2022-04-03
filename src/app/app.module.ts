@@ -12,6 +12,8 @@ import { ContactsListComponent } from './components/contacts-list/contacts-list.
 import { LoginComponent } from './pages/login/login.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
+import { ContactDetailsComponent } from './components/contact-details/contact-details.component';
+import { LengthPipe } from './pipes/length/length.pipe';
 
 const materialModules = [
   MatIconModule
@@ -24,6 +26,8 @@ const materialModules = [
     ContactsListComponent,
     NavComponent,
     ContactsComponent,
+    ContactDetailsComponent,
+    LengthPipe,
   ],
   imports: [
     BrowserModule,

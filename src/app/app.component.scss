@@ -19,3 +19,26 @@ h6 {
 p {
   margin: 0;
 }
+
+.layout-grid {
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-template-areas:
+    "nav  main";
+}
+
+.nav {
+  grid-area: nav;
+  background-color: var(--color-grad-top);
+  display: flex;
+}
+
+.main {
+  grid-area: main;
+}
+
+.logo {
+  padding: 20px 10px;
+}

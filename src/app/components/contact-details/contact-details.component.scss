@@ -1,0 +1,43 @@
+p + p {
+  margin-top: .4rem;
+}
+
+.container {
+  padding: 40px;
+}
+
+.head {
+  display: flex;
+  gap: 25px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar {
+  --size: 114px;
+  border-radius: 26px;
+  height: var(--size);
+  width: var(--size);
+}
+
+.name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.email {
+  color: var(--color-text-secondary);
+}
+
+.buttons {
+  display: flex;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.detail-items {
+  margin-top: 40px;
+}

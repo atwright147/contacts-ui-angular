@@ -1,1 +1,15 @@
-<p>contacts works!</p>
+<div class="layout-grid">
+  <div class="column left">
+    <app-contacts-list></app-contacts-list>
+  </div>
+
+  <div class="column right">
+    <ng-container *ngIf="selected$ | async | length; else noContactToDisplay">
+      <app-contact-details></app-contact-details>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #noContactToDisplay>
+  <p>Please select a contact</p>
+</ng-template>
