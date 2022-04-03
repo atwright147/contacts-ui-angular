@@ -15,6 +15,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { ContactDetailsComponent } from './components/contact-details/contact-details.component';
 import { BoolPipe, LengthPipe, NegatePipe, TrueOrNullPipe } from './pipes';
+import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
 
 const materialModules = [
   MatIconModule
@@ -32,6 +33,7 @@ const materialModules = [
     LengthPipe,
     NegatePipe,
     TrueOrNullPipe,
+    ComingSoonComponent,
   ],
   imports: [
     BrowserModule,
