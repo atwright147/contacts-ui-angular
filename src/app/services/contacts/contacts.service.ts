@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
-export interface Contact {
-  firstName: string,
-}
+import { Contact } from '../../types/contact.types';
 
 @Injectable({
   providedIn: 'root'
