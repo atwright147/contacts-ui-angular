@@ -9,7 +9,7 @@ import { Contact } from '../../types/contact.types';
   providedIn: 'root'
 })
 export class ContactsService {
-  private readonly url = 'http://localhost:4000/api/v1/contacts';
+  private readonly url = '/api/v1/contacts';
 
   private readonly _contacts = new BehaviorSubject<Contact[]>([]);
   readonly contacts$ = this._contacts.asObservable();
