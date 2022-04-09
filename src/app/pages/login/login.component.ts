@@ -1,27 +1,43 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+
 import { AuthCreds, AuthService } from '../../services/auth/auth.service';
+
+const defaults = {
+  username: 'admin@example.com',
+  password: 'password',
+}
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
-  email = 'admin@example.com';
-  password = 'password';
+export class LoginComponent {
+  validate;
+  loginForm: FormGroup;
 
   constructor(
     private readonly authService: AuthService,
   ) { }
 
   ngOnInit() {
+    this.buildForm();
   }
 
-  onSubmit(form: NgForm) {
-    console.info(form.value);
-
-    this.authService.login(form.value as AuthCreds).subscribe();
+  buildForm() {
+    this.loginForm = new FormGroup({
+      username: new FormControl(defaults.username, [Validators.required]),
+      password: new FormControl(defaults.password)
+    })
   }
 
+  onSubmit() {
+    console.info(this.loginForm.value);
+    this.validate = true;
+
+    if (this.loginForm.valid) {
+      this.authService.login(this.loginForm.value).subscribe();
+    }
+  }
 }

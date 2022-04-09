@@ -1,6 +1,6 @@
 import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
@@ -16,6 +16,8 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
 import { ContactDetailsComponent } from './components/contact-details/contact-details.component';
 import { BoolPipe, LengthPipe, NegatePipe, TrueOrNullPipe } from './pipes';
 import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
+import { CustomInputComponent } from './components/fields/input/input.component';
+import { ButtonComponent } from './components/button/button.component';
 
 const materialModules = [
   MatIconModule
@@ -34,11 +36,13 @@ const materialModules = [
     NegatePipe,
     TrueOrNullPipe,
     ComingSoonComponent,
+    CustomInputComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     NoopAnimationsModule,
     ...materialModules,

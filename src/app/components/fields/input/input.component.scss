@@ -1,0 +1,21 @@
+.field {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: .25rem;
+}
+
+.input {
+  border: 1px solid var(--color-border-dark);
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: .5rem;
+
+  &:focus-within {
+    box-shadow: 0 0 0 2px var(--color-active-accent);
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 0;
+  }
+}

@@ -1,0 +1,17 @@
+<div class="field">
+  <input
+    class="input"
+    #input
+    [type]="type"
+    [value]="value"
+    (input)="onInput(input.value)"
+    [placeholder]="placeholder"
+    [disabled]="isDisabled"
+    [readOnly]="edit"
+    (blur)="onTouched($event)"
+    (focus)="onFocus()"
+    [id]="id"
+  />
+
+  <label class="label" [for]="id">{{label}}</label>
+</div>
