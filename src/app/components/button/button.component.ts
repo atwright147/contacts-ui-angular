@@ -17,9 +17,7 @@ export class ButtonComponent {
   @Input() type = '';
   @Input() wide = false;
   @Input() disabled = false;
-  // @Input() motif = Motifs.SECONDARY;
   @Input() set motif(name: Motifs) {
-    console.info(name, Motifs[name]);
     this.className = Motifs[name];
   }
 }
