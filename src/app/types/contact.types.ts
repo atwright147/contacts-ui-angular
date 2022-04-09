@@ -1,3 +1,5 @@
+import { binary } from './binary.type';
+
 export interface Contact {
   id: number;
   uuid: string,
@@ -9,6 +11,7 @@ export interface Contact {
   dateOfBirth: string,
   addresses: Address[],
   comments: string[],
+  isFavourite: binary,
 }
 
 export interface Address {
