@@ -9,8 +9,8 @@
 
   <form class="form" [formGroup]="loginForm" (submit)="onSubmit()">
     <custom-input formControlName='email' label="Email" id="email" [autoFocus]="true"></custom-input>
-    <custom-input formControlName='password' label="Password" id="password"></custom-input>
+    <custom-input formControlName='password' label="Password" id="password" type="password"></custom-input>
 
-    <app-button [wide]="true">Login</app-button>
+    <app-button [wide]="true" [motif]="Motifs.primary">Login</app-button>
   </form>
 </div>

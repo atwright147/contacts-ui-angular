@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 
+import { Motifs } from '../../components/button/button.component';
 import { AuthCreds, AuthService } from '../../services/auth/auth.service';
 
 const defaults = {
@@ -14,6 +15,7 @@ const defaults = {
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  Motifs = Motifs
   validate;
   loginForm: FormGroup;
 
