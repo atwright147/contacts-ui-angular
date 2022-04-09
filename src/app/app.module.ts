@@ -18,6 +18,8 @@ import { BoolPipe, LengthPipe, NegatePipe, TrueOrNullPipe } from './pipes';
 import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
 import { CustomInputComponent } from './components/fields/input/input.component';
 import { ButtonComponent } from './components/button/button.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CardComponent } from './components/card/card.component';
 
 const materialModules = [
   MatIconModule
@@ -38,6 +40,8 @@ const materialModules = [
     ComingSoonComponent,
     CustomInputComponent,
     ButtonComponent,
+    HomeComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
