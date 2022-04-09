@@ -1,9 +1,16 @@
 .button {
-  background-color: var(--color-active-accent);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
   border: 0;
   border-radius: 5px;
-  color: white;
   padding: .5rem 1rem;
+
+  &.primary {
+    background-color: var(--color-active-accent);
+    color: white;
+  }
 }
 
 .wide {

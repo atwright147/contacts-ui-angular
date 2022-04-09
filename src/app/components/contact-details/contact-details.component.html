@@ -10,22 +10,22 @@
         <p class="email">{{contact.jobTitle}}</p>
 
         <div class="buttons">
-          <Button motif="primary">
+          <app-button type="button" [motif]="Motifs.secondary">
             <mat-icon>forum</mat-icon>
             Message
-          </Button>
+          </app-button>
 
-          <Button>
+          <app-button type="button" [motif]="Motifs.primary">
             <mat-icon>phone</mat-icon>
-          </Button>
+          </app-button>
 
-          <Button>
+          <app-button type="button">
             <mat-icon>share</mat-icon>
-          </Button>
+          </app-button>
 
-          <Button>
+          <app-button type="button">
             <mat-icon>more_horiz</mat-icon>
-          </Button>
+          </app-button>
         </div>
       </div>
     </section>
