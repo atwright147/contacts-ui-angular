@@ -64,6 +64,7 @@
   display: flex;
   white-space: nowrap;
   text-align: right;
+  margin-left: auto;
 }
 
 .details {
@@ -74,7 +75,7 @@
 .container {
   display: flex;
   margin: 0;
-  margin-right: auto;
+  width: 100%;
 }
 
 .icon {

@@ -2,7 +2,7 @@
   height: 100%;
 
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: minmax(100px, max-content) 2fr;
   grid-template-areas: "left right";
 }
 
@@ -12,6 +12,8 @@
   border-top: 0;
   border-bottom: 0;
   grid-area: left;
+
+  max-width: max-content;
 }
 
 .right {
