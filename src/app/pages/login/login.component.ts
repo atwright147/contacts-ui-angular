@@ -4,7 +4,7 @@ import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angula
 import { AuthCreds, AuthService } from '../../services/auth/auth.service';
 
 const defaults = {
-  username: 'admin@example.com',
+  email: 'admin@example.com',
   password: 'password',
 }
 
@@ -27,7 +27,7 @@ export class LoginComponent {
 
   buildForm() {
     this.loginForm = new FormGroup({
-      username: new FormControl(defaults.username, [Validators.required]),
+      email: new FormControl(defaults.email, [Validators.required]),
       password: new FormControl(defaults.password)
     })
   }
