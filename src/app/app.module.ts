@@ -19,6 +19,7 @@ import { BoolPipe, LengthPipe, NegatePipe, TrueOrNullPipe } from './pipes';
 import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
 import { CustomInputComponent } from './components/fields/input/input.component';
 import { ButtonComponent } from './components/button/button.component';
+import { ContactDetailsItemComponent } from './components/contact-details-item/contact-details-item.component';
 
 const materialModules = [
   MatIconModule
@@ -39,6 +40,7 @@ const materialModules = [
     ComingSoonComponent,
     CustomInputComponent,
     ButtonComponent,
+    ContactDetailsItemComponent,
   ],
   imports: [
     BrowserModule,
