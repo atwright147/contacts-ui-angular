@@ -11,13 +11,14 @@ export enum Motifs {
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent {
-  className = '';
+  classNames = [];
 
   @Input() id = '';
   @Input() type = '';
   @Input() wide = false;
   @Input() disabled = false;
+  @Input() icon = false;
   @Input() set motif(name: Motifs) {
-    this.className = Motifs[name];
+    this.classNames.push(Motifs[name]);
   }
 }

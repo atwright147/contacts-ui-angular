@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { NgJoinPipeModule } from 'angular-pipes';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CustomErrorHandler } from './shared/error-handler/error-handler';
@@ -45,6 +46,7 @@ const materialModules = [
     ReactiveFormsModule,
     HttpClientModule,
     NoopAnimationsModule,
+    NgJoinPipeModule,
     ...materialModules,
   ],
   providers: [
