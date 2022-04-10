@@ -12,21 +12,25 @@
       </div>
 
       <div class="buttons">
-        <button type="button" class="btn btn-icon">
-          <mat-icon>forum</mat-icon>
-        </button>
-        <button type="button" class="btn btn-icon">
-          <mat-icon>phone</mat-icon>
-        </button>
-        <button
+        <app-button
           type="button"
-          class="btn btn-icon"
+          [icon]="true"
+        >
+          <mat-icon>forum</mat-icon>
+        </app-button>
+        <app-button
+          type="button"
+          [icon]="true"
+        >
+          <mat-icon>phone</mat-icon>
+        </app-button>
+        <app-button
+          type="button"
+          [icon]="true"
           (click)="handleContextMenu(contact.id)"
         >
-          <span class="icon">
-            <mat-icon>more_horiz</mat-icon>
-          </span>
-        </button>
+          <mat-icon>more_horiz</mat-icon>
+        </app-button>
       </div>
     </div>
   </li>

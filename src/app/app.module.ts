@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { NgJoinPipeModule } from 'angular-pipes';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CustomErrorHandler } from './shared/error-handler/error-handler';
@@ -20,6 +21,7 @@ import { CustomInputComponent } from './components/fields/input/input.component'
 import { ButtonComponent } from './components/button/button.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CardComponent } from './components/card/card.component';
+import { ContactDetailsItemComponent } from './components/contact-details-item/contact-details-item.component';
 
 const materialModules = [
   MatIconModule
@@ -42,6 +44,7 @@ const materialModules = [
     ButtonComponent,
     HomeComponent,
     CardComponent,
+    ContactDetailsItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,7 @@ const materialModules = [
     ReactiveFormsModule,
     HttpClientModule,
     NoopAnimationsModule,
+    NgJoinPipeModule,
     ...materialModules,
   ],
   providers: [

@@ -1,0 +1,26 @@
+<ng-container *ngIf="item.length">
+  <div class="column left">
+    <p class="label">{{label}}</p>
+  </div>
+
+  <div class="column right">
+    <ng-container *ngIf="itemType === ItemType.STRING">
+      <p>{{item}}</p>
+    </ng-container>
+
+    <ng-container *ngIf="itemType === ItemType.EMAILS">
+      <ng-container *ngFor="let email of item">
+        <a [href]="email.email" class="email">{{email.email}}</a>
+        <span *ngIf="email.isPrimary">Primary</span><br>
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="itemType === ItemType.ADDRESSES">
+      <p class="address" *ngFor="let address of item">{{[address.address1, address.address2, address.address3, address.city, address.county, address.postCode] | join: ',\n'}}</p>
+    </ng-container>
+
+    <ng-container *ngIf="itemType === ItemType.PHONES">
+      <p>{{item | json}}</p>
+    </ng-container>
+  </div>
+</ng-container>

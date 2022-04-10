@@ -1,0 +1,31 @@
+p {
+  margin: 0;
+}
+
+p + p {
+  margin-top: 5px;
+}
+
+:host {
+  display: grid;
+  grid-template-columns: minmax(100px, max-content) 2fr;
+  grid-template-areas: "left right";
+  gap: 2rem;
+}
+
+.left {
+  grid-area: left;
+  text-align: end;
+}
+
+.right {
+  grid-area: right;
+}
+
+.label {
+  color: var(--color-border-dark);
+}
+
+.address {
+  white-space: pre-wrap;
+}

@@ -38,30 +38,9 @@
   margin-right: 10px;
 }
 
-.btn-icon {
-  --size: 36px;
-
-  transition: color .5s ease-in-out;
-  cursor: pointer;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border: 1px solid #ECEEF5;
-  border-radius: 10px;
-  background-color: white;
-  color: #8083A3;
-  height: var(--size);
-  width: var(--size);
-}
-
-.btn-icon:hover {
-  color: var(--color-active-accent);
-}
-
 .buttons {
   display: flex;
+  gap: .35rem;
   white-space: nowrap;
   text-align: right;
   margin-left: auto;
@@ -78,6 +57,8 @@
   width: 100%;
 }
 
-.icon {
-  pointer-events: none;
+:host ::ng-deep .mat-icon {
+  font-size: 18px;
+  height: 18px;
+  width: 18px;
 }
