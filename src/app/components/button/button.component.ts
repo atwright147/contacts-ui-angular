@@ -17,7 +17,11 @@ export class ButtonComponent {
   @Input() type = '';
   @Input() wide = false;
   @Input() disabled = false;
-  @Input() icon = false;
+  @Input() set icon(state: boolean) {
+    if (state) {
+      this.classNames.push('button-icon');
+    }
+  }
   @Input() set motif(name: Motifs) {
     this.classNames.push(Motifs[name]);
   }
