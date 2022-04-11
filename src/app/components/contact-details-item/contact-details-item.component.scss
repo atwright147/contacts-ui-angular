@@ -29,3 +29,18 @@ p + p {
 .address {
   white-space: pre-wrap;
 }
+
+.email {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.email + .email {
+  margin-top: .25rem;
+}
+
+.emails {
+  padding: 0;
+  margin: 0;
+}
