@@ -1,4 +1,45 @@
+:host {
+  display: contents;
+}
+
+:ng-deep main {
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+app-card {
+  display: contents;
+}
+
 .cards {
-  display: flex;
-  flex-wrap: wrap;
+  --width: 200px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--width), 1fr));
+  gap: 1rem;
+
+  header {
+    h1 {
+      margin: 0;
+    }
+
+    h1,
+    p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: calc(var(--width) - .75rem);
+    }
+  }
+
+  .avatar-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .buttons {
+    display: flex;
+    gap: .25rem;
+    justify-content: flex-end;
+  }
 }

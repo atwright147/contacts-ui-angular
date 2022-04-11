@@ -1,24 +1,25 @@
 <h1>Favourites</h1>
 
-<div class="cards">
+<section class="cards">
   <app-card *ngFor="let fav of favourites$ | async">
-    <h1>{{fav.firstName}} {{fav.lastName}}</h1>
-    <p>{{fav.jobTitle}}</p>
+    <header slot="header">
+      <h1>{{fav.firstName}} {{fav.lastName}}</h1>
+      <p>{{fav.jobTitle}}</p>
+    </header>
 
-    <img src="/api/v1/avatar/{{fav.id}}" alt="" class="avatar">
-
-    <div class="buttons">
-      <button type="button" class="btn btn-icon">
-        <mat-icon>forum</mat-icon>
-      </button>
-      <button type="button" class="btn btn-icon">
-        <mat-icon>phone</mat-icon>
-      </button>
+    <div class="avatar-container" slot="body">
+      <img src="/api/v1/avatar/{{fav.id}}" alt="" class="avatar">
     </div>
-  </app-card>
-</div>
 
-<details>
-  <summary>JSON</summary>
-  <pre>{{favourites$ | async | json}}</pre>
-</details>
+    <footer slot="footer">
+      <div class="buttons">
+        <app-button [icon]="true" type="button" class="btn btn-icon">
+          <mat-icon>forum</mat-icon>
+        </app-button>
+        <app-button [icon]="true" type="button" class="btn btn-icon">
+          <mat-icon>phone</mat-icon>
+        </app-button>
+      </div>
+    </footer>
+  </app-card>
+</section>
