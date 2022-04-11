@@ -20,6 +20,7 @@ import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
 import { CustomInputComponent } from './components/fields/input/input.component';
 import { ButtonComponent } from './components/button/button.component';
 import { ContactDetailsItemComponent } from './components/contact-details-item/contact-details-item.component';
+import { PrefixPipe } from './pipes/prefix/prefix.pipe';
 
 const materialModules = [
   MatIconModule
@@ -41,6 +42,7 @@ const materialModules = [
     CustomInputComponent,
     ButtonComponent,
     ContactDetailsItemComponent,
+    PrefixPipe,
   ],
   imports: [
     BrowserModule,
