@@ -10,7 +10,7 @@
 
     <ul *ngIf="itemType === ItemType.EMAILS" class="emails">
       <li *ngFor="let email of item" class="email">
-        <a [href]="email.email">{{email.email}}</a>
+        <a [href]="email.email | prefix: 'mailto:'">{{email.email}}</a>
         <span *ngIf="email.isPrimary">Primary</span>
       </li>
     </ul>
