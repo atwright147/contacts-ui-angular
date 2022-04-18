@@ -16,4 +16,4 @@
   <label class="label" [for]="id">{{label}}</label>
 </div>
 
-<app-errors [errors]="control.errors"></app-errors>
+<app-errors *ngIf="control?.errors" [errors]="control.errors"></app-errors>

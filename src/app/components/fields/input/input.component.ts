@@ -1,5 +1,5 @@
 import { Component, forwardRef, Input, ViewChild, ElementRef } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor, NG_VALIDATORS, NgControl, AbstractControl, ValidationErrors } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor, NG_VALIDATORS, AbstractControl, ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'custom-input',

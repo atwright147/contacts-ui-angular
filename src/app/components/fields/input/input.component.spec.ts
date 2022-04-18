@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { CustomInputComponent } from './input.component';
+import { ErrorsComponent } from '../../errors/errors.component';
 
 describe('InputComponent', () => {
   let component: CustomInputComponent;
@@ -8,7 +10,13 @@ describe('InputComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CustomInputComponent ]
+      declarations: [
+        CustomInputComponent,
+        ErrorsComponent,
+      ],
+      imports: [
+        ReactiveFormsModule,
+      ],
     })
     .compileComponents();
   });
