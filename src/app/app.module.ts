@@ -21,6 +21,7 @@ import { CustomInputComponent } from './components/fields/input/input.component'
 import { ButtonComponent } from './components/button/button.component';
 import { ContactDetailsItemComponent } from './components/contact-details-item/contact-details-item.component';
 import { PrefixPipe } from './pipes/prefix/prefix.pipe';
+import { ErrorsComponent } from './components/errors/errors.component';
 
 const materialModules = [
   MatIconModule
@@ -43,6 +44,7 @@ const materialModules = [
     ButtonComponent,
     ContactDetailsItemComponent,
     PrefixPipe,
+    ErrorsComponent,
   ],
   imports: [
     BrowserModule,
