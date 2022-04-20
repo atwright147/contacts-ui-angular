@@ -1,0 +1,25 @@
+<!-- style="top: {pos.bottom}px; left: {pos.left}px;" -->
+<div
+  *ngIf="show"
+  [style]="{ top, left }"
+  class="container"
+>
+  <ul class="menu">
+    <li *ngFor="let item of content" class="menu-item">
+      <ng-condition>
+        <ng-if [condition]="!!item.action">
+          Is Action
+          <button class="btn-link" type="button" (click)="item.action">{{item.title}}</button>
+        </ng-if>
+        <ng-else-if [condition]="!!item.link">
+          Is Link
+          <a [href]="item.link">{{item.title}}</a>
+        </ng-else-if>
+        <ng-else>
+          {{item.title}}
+        </ng-else>
+      </ng-condition>
+    </li>
+  </ul>
+</div>
+<pre>{{show}}</pre>

@@ -27,7 +27,8 @@
         <app-button
           type="button"
           [icon]="true"
-          (click)="handleContextMenu(contact.id)"
+          (click)="handleContextMenu($event, contact.id)"
+          appClickOutside (clickOutside)="handleOutSideClick()"
         >
           <mat-icon>more_horiz</mat-icon>
         </app-button>

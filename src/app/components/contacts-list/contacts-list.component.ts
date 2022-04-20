@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { ContactsService } from '../../services/contacts/contacts.service';
+import { ContextMenuService } from '../../services/context-menu/context-menu.service';
 import { Contact } from '../../types/contact.types';
 
 @Component({
@@ -14,13 +15,43 @@ export class ContactsListComponent {
 
   constructor(
     private readonly contactsService: ContactsService,
+    private readonly contextMenuService: ContextMenuService,
   ) { }
 
   select(contact: Contact): void {
     this.contactsService.select(contact);
   }
 
-  handleContextMenu(contactId: number): void {
-    console.log('handleContextMenu');
+  handleContextMenu(event: MouseEvent, contactId: number): void {
+    event.preventDefault();
+    event.stopPropagation();
+
+    this.contextMenuService.set({
+      show: true,
+      target: event.target as HTMLElement,
+      content: [
+        {
+          title: 'Edit',
+          action: () => {
+            console.log('Edit', contactId);
+          }
+        },
+        {
+          title: 'Delete',
+          action: () => {
+            console.log('Delete', contactId);
+          }
+        },
+      ],
+    });
+  }
+
+  handleOutSideClick(): void {
+    console.info('handleOutSideClick');
+    this.contextMenuService.set({
+      show: false,
+      target: null,
+      content: [],
+    });
   }
 }

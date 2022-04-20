@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { NgJoinPipeModule } from 'angular-pipes';
+import { NgConditionModule } from 'ng-condition';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CustomErrorHandler } from './shared/error-handler/error-handler';
@@ -22,6 +23,8 @@ import { ButtonComponent } from './components/button/button.component';
 import { ContactDetailsItemComponent } from './components/contact-details-item/contact-details-item.component';
 import { PrefixPipe } from './pipes/prefix/prefix.pipe';
 import { ErrorsComponent } from './components/errors/errors.component';
+import { ContextMenuComponent } from './components/context-menu/context-menu.component';
+import { ClickOutsideDirective } from './directives/click-outside/click-outside.directive';
 
 const materialModules = [
   MatIconModule
@@ -45,6 +48,8 @@ const materialModules = [
     ContactDetailsItemComponent,
     PrefixPipe,
     ErrorsComponent,
+    ContextMenuComponent,
+    ClickOutsideDirective,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +58,7 @@ const materialModules = [
     HttpClientModule,
     NoopAnimationsModule,
     NgJoinPipeModule,
+    NgConditionModule,
     ...materialModules,
   ],
   providers: [
