@@ -5,10 +5,8 @@ import {Directive, ElementRef, EventEmitter, HostListener, Output} from '@angula
 /**
  * Click outside directive
  *
- * @example
- * <div appClickOutside (clickOutside)="handleOutSideClick()">
+ * @example <div appClickOutside (clickOutside)="handleOutSideClick()">
  */
-
 @Directive({
   selector: '[appClickOutside]'
 })
@@ -24,7 +22,6 @@ export class ClickOutsideDirective {
     const clickedInside = this.elementRef.nativeElement.contains(target);
 
     if (!clickedInside) {
-      console.log('outside click xx');
       this.clickOutside.emit();
     }
   }

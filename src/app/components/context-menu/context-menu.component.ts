@@ -21,12 +21,11 @@ export class ContextMenuComponent {
 
   ngOnInit(): void {
     this.contextMenuService.menu$.subscribe((data) => {
-      console.info('ContextMenuComponent.ngOnInit()', data);
       this.show = data.show;
       this.target = data.target;
       this.content = data.content;
-      this.left = data.target.getClientRects()[0].left + 'px';
-      this.top = data.target.getClientRects()[0].bottom + 'px';
+      this.left = data.target?.getClientRects()[0].left + 'px';
+      this.top = data.target?.getClientRects()[0].bottom + 'px';
     });
   }
 }

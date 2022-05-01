@@ -32,22 +32,17 @@ export class ContactsListComponent {
       content: [
         {
           title: 'Edit',
-          action: () => {
-            console.log('Edit', contactId);
-          }
+          action: () => console.info('Edit', contactId),
         },
         {
           title: 'Delete',
-          action: () => {
-            console.log('Delete', contactId);
-          }
+          action: () => console.info('Delete', contactId),
         },
       ],
     });
   }
 
   handleOutSideClick(): void {
-    console.info('handleOutSideClick');
     this.contextMenuService.set({
       show: false,
       target: null,
