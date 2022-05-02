@@ -2,24 +2,24 @@ import { Component, forwardRef, Input, ViewChild, ElementRef } from '@angular/co
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, NG_VALIDATORS, AbstractControl, ValidationErrors } from '@angular/forms';
 
 @Component({
-  selector: 'custom-input',
+  selector: 'app-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => CustomInputComponent),
+      useExisting: forwardRef(() => InputComponent),
       multi: true,
     },
     {
       provide: NG_VALIDATORS,
-      useExisting: forwardRef(() => CustomInputComponent),
+      useExisting: forwardRef(() => InputComponent),
       multi: true,
     },
   ]
 })
-export class CustomInputComponent implements ControlValueAccessor {
-  @ViewChild('input', { static: false }) input: ElementRef<any>;
+export class InputComponent implements ControlValueAccessor {
+  @ViewChild('input', { static: false }) input: ElementRef<HTMLInputElement>;
 
   @Input() type = 'text';
   @Input() placeholder = '';

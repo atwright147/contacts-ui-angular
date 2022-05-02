@@ -18,13 +18,14 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
 import { ContactDetailsComponent } from './components/contact-details/contact-details.component';
 import { BoolPipe, LengthPipe, NegatePipe, TrueOrNullPipe } from './pipes';
 import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
-import { CustomInputComponent } from './components/fields/input/input.component';
+import { InputComponent } from './components/fields/input/input.component';
 import { ButtonComponent } from './components/button/button.component';
 import { ContactDetailsItemComponent } from './components/contact-details-item/contact-details-item.component';
 import { PrefixPipe } from './pipes/prefix/prefix.pipe';
 import { ErrorsComponent } from './components/errors/errors.component';
 import { ContextMenuComponent } from './components/context-menu/context-menu.component';
 import { ClickOutsideDirective } from './directives/click-outside/click-outside.directive';
+import { ContactsEditComponent } from './pages/contacts-edit/contacts-edit.component';
 
 const materialModules = [
   MatIconModule
@@ -43,13 +44,14 @@ const materialModules = [
     NegatePipe,
     TrueOrNullPipe,
     ComingSoonComponent,
-    CustomInputComponent,
+    InputComponent,
     ButtonComponent,
     ContactDetailsItemComponent,
     PrefixPipe,
     ErrorsComponent,
     ContextMenuComponent,
     ClickOutsideDirective,
+    ContactsEditComponent,
   ],
   imports: [
     BrowserModule,
