@@ -3,13 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ComingSoonComponent } from './pages/coming-soon/coming-soon.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
+import { ContactsEditComponent } from './pages/contacts-edit/contacts-edit.component';
 import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   { path: '', component: ComingSoonComponent },
   { path: 'messages', component: ComingSoonComponent },
   { path: 'calls', component: ComingSoonComponent },
-  { path: 'contacts', component: ContactsComponent },
+  { path: 'contacts', component: ContactsComponent, pathMatch: 'full' },
+  { path: 'contacts/edit/:id', component: ContactsEditComponent },
   { path: 'calendar', component: ComingSoonComponent },
   { path: 'settings', component: ComingSoonComponent },
   { path: 'login', component: LoginComponent },
