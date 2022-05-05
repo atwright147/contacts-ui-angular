@@ -1,6 +1,6 @@
 import { PrefixPipe } from './prefix.pipe';
 
-fdescribe('PrefixPipe', () => {
+describe('PrefixPipe', () => {
   it('create an instance', () => {
     const pipe = new PrefixPipe();
     expect(pipe).toBeTruthy();
