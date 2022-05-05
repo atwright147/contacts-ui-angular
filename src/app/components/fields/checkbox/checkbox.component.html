@@ -1,0 +1,16 @@
+<label>
+  <input
+    class="input"
+    #input
+    type="checkbox"
+    [value]="value"
+    [checked]="value"
+    (input)="onInput(input.value)"
+    [disabled]="isDisabled"
+    (blur)="onTouched($event)"
+    (focus)="onFocus()"
+    [id]="id"
+  >
+  <span class="checkmark"></span>
+  {{label}}
+</label>

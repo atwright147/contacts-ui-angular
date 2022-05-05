@@ -26,6 +26,7 @@ import { ErrorsComponent } from './components/errors/errors.component';
 import { ContextMenuComponent } from './components/context-menu/context-menu.component';
 import { ClickOutsideDirective } from './directives/click-outside/click-outside.directive';
 import { ContactsEditComponent } from './pages/contacts-edit/contacts-edit.component';
+import { CheckboxComponent } from './components/fields/checkbox/checkbox.component';
 
 const materialModules = [
   MatIconModule
@@ -52,6 +53,7 @@ const materialModules = [
     ContextMenuComponent,
     ClickOutsideDirective,
     ContactsEditComponent,
+    CheckboxComponent,
   ],
   imports: [
     BrowserModule,

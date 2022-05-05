@@ -1,12 +1,15 @@
-<p>contacts-edit works!</p>
+<h1>Edit a Contact</h1>
 
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <app-input formControlName="id" label="ID" [value]="id"></app-input>
+
   <app-input formControlName="firstName" label="First Name"></app-input>
   <app-input formControlName="lastName" label="Last Name"></app-input>
   <app-input formControlName="jobTitle" label="Job Title"></app-input>
   <app-input formControlName="bio" label="Bio"></app-input>
   <app-input formControlName="dateOfBirth" label="Date of Birth"></app-input>
-  <app-input formControlName="firstName" label=""></app-input>
-  <app-input formControlName="firstName" label=""></app-input>
-  <app-input formControlName="firstName" label=""></app-input>
+
+  <app-checkbox formControlName="isFavourite" [value]="true" label="Favourite"></app-checkbox>
+
+  <app-button>Save</app-button>
 </form>
