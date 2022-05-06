@@ -20,15 +20,15 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor, NG_VALIDATORS, AbstractControl
 })
 export class CheckboxComponent implements ControlValueAccessor {
   control: AbstractControl;
-  checked = false;
 
   @ViewChild('input', { static: false }) input: ElementRef<HTMLInputElement>;
 
   @Input() autoFocus = false;
-  @Input() isDisabled: boolean;
-  @Input() id: string;
-  @Input() label: string;
-  @Input() value = false;
+  @Input() isDisabled = false;
+  @Input() id = '';
+  @Input() label = '';
+  @Input() checked = false;
+  @Input() touched = false;
 
   onChange: (value?: any) => void;
   onTouch: (event: any) => void;
@@ -53,8 +53,8 @@ export class CheckboxComponent implements ControlValueAccessor {
     return null;
   }
 
-  writeValue(value: any) {
-    this.value = value;
+  writeValue(value: boolean) {
+    this.checked = value;
   }
 
   registerOnChange(fn: any): void {
@@ -70,14 +70,27 @@ export class CheckboxComponent implements ControlValueAccessor {
   }
 
   onInput(value) {
-    if(this.onChange) {
+    console.info('onInput', value);
+    if (this.onChange) {
       this.onChange(value);
     }
   }
 
   onTouched(value) {
-    if(this.onTouch) {
+    if (this.onTouch) {
       this.onTouch(value)
+    }
+  }
+
+  toggle(): void {
+    if (!this.isDisabled) {
+      this.checked = !this.checked;
+      this.onChange(this.checked);
+
+      if (!this.touched) {
+        this.touched = true;
+        this.onTouched(true);
+      }
     }
   }
 

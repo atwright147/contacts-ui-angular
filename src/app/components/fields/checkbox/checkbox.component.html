@@ -3,9 +3,9 @@
     class="input"
     #input
     type="checkbox"
-    [value]="value"
-    [checked]="value"
-    (input)="onInput(input.value)"
+    [checked]="checked"
+    (input)="onInput(checked)"
+    (change)="toggle()"
     [disabled]="isDisabled"
     (blur)="onTouched($event)"
     (focus)="onFocus()"
