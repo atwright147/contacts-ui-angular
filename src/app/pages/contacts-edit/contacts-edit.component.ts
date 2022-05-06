@@ -25,7 +25,7 @@ export class ContactsEditComponent implements OnInit {
       emails: this.fb.array([]),
       addresses: this.fb.array([]),
       comments: this.fb.array([]),
-      isFavourite: this.fb.control('', []),
+      isFavourite: this.fb.control(false, []),
     });
   }
 
