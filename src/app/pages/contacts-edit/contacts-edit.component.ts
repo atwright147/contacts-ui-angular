@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contacts-edit',
@@ -8,11 +9,13 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./contacts-edit.component.scss']
 })
 export class ContactsEditComponent implements OnInit {
+  id: number;
   readonly form: FormGroup;
 
   constructor(
     private readonly http: HttpClient,
     private readonly fb: FormBuilder,
+    private readonly route: ActivatedRoute,
   ) {
     // fixes issue where form was rendering before initiated
     // see: https://github.com/KillerCodeMonkey/ngx-quill/issues/187#issuecomment-695796458
@@ -27,9 +30,27 @@ export class ContactsEditComponent implements OnInit {
       comments: this.fb.array([]),
       isFavourite: this.fb.control(false, []),
     });
+
+    if (this.id) {
+      this.form.addControl('id', this.fb.control(this.id));
+    }
   }
 
   ngOnInit(): void {
+    if (this.route.snapshot.paramMap.get('id')) {
+      this.id = Number(this.route.snapshot.paramMap.get('id'));
+    }
   }
 
+  onSubmit(): void {
+    let METHOD = 'POST';
+    if (this.id) {
+      METHOD = 'PUT';
+    }
+
+    this.http.request(METHOD, '/api/v1/contacts', { body: this.form.value }).subscribe(
+      () => console.info('submitted'),
+      (err) => console.info(err),
+    );
+  }
 }

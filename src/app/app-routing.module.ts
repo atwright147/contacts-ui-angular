@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'messages', component: ComingSoonComponent },
   { path: 'calls', component: ComingSoonComponent },
   { path: 'contacts', component: ContactsComponent, pathMatch: 'full' },
+  { path: 'contacts/create', component: ContactsEditComponent },
   { path: 'contacts/edit/:id', component: ContactsEditComponent },
   { path: 'calendar', component: ComingSoonComponent },
   { path: 'settings', component: ComingSoonComponent },
