@@ -24,12 +24,11 @@ export class InputComponent implements ControlValueAccessor {
   @Input() type = 'text';
   @Input() placeholder = '';
   @Input() autoFocus = false;
-  @Input() isDisabled: boolean;
+  @Input() isDisabled = false;
   @Input() edit: boolean;
-  @Input() id: string;
-  @Input() label: string;
-
-  value = '';
+  @Input() id = '';
+  @Input() label = '';
+  @Input() value: any = '';
   control: AbstractControl;
 
   onChange: (value?: any) => void;
