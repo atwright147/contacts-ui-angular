@@ -9,6 +9,7 @@ import { NgConditionModule } from 'ng-condition';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CustomErrorHandler } from './shared/error-handler/error-handler';
+import { httpInterceptorProviders } from './http-interceptors';
 
 import { AppComponent } from './app.component';
 import { ContactsListComponent } from './components/contacts-list/contacts-list.component';
@@ -27,6 +28,8 @@ import { ContextMenuComponent } from './components/context-menu/context-menu.com
 import { ClickOutsideDirective } from './directives/click-outside/click-outside.directive';
 import { ContactsEditComponent } from './pages/contacts-edit/contacts-edit.component';
 import { CheckboxComponent } from './components/fields/checkbox/checkbox.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { SpinnerLogoComponent } from './components/spinner-logo/spinner-logo.component';
 
 const materialModules = [
   MatIconModule
@@ -54,6 +57,8 @@ const materialModules = [
     ClickOutsideDirective,
     ContactsEditComponent,
     CheckboxComponent,
+    SpinnerComponent,
+    SpinnerLogoComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,6 +71,7 @@ const materialModules = [
     ...materialModules,
   ],
   providers: [
+    httpInterceptorProviders,
     { provide: ErrorHandler, useClass: CustomErrorHandler },
   ],
   bootstrap: [

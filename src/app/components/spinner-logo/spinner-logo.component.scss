@@ -1,0 +1,42 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+svg {
+  width: 35%;
+  padding: 20px;
+  margin: 10px;
+  overflow: visible;
+}
+
+.stroke {
+  stroke-width: 38px;
+  stroke: var(--color-active-accent);
+  animation: dash 2s ease-in-out alternate-reverse infinite;
+}
+
+.cm {
+  --length: 532.62;
+  stroke-dasharray: var(--length);
+  stroke-dashoffset: var(--length);
+}
+
+.m1 {
+  --length: 190.96;
+  stroke-dasharray: var(--length);
+  stroke-dashoffset: var(--length);
+}
+
+.m2 {
+  --length: 121.84;
+  stroke-dasharray: var(--length);
+  stroke-dashoffset: var(--length);
+}
+
+@keyframes dash {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
