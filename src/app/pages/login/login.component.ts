@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { Motifs } from '../../components/button/button.component';
-import { AuthCreds, AuthService } from '../../services/auth/auth.service';
+import { AuthService } from '../../services/auth/auth.service';
 
 const defaults = {
   email: 'admin@example.com',
@@ -21,6 +22,7 @@ export class LoginComponent {
 
   constructor(
     private readonly authService: AuthService,
+    private readonly router: Router,
   ) { }
 
   ngOnInit() {
@@ -31,15 +33,16 @@ export class LoginComponent {
     this.loginForm = new FormGroup({
       email: new FormControl(defaults.email, [Validators.required, Validators.email]),
       password: new FormControl(defaults.password, [Validators.required, Validators.minLength(8), Validators.maxLength(16)]),
-    })
+    });
   }
 
   onSubmit() {
-    console.info(this.loginForm.value);
     this.validate = true;
 
     if (this.loginForm.valid) {
-      this.authService.login(this.loginForm.value).subscribe();
+      this.authService.login(this.loginForm.value).subscribe(
+        () => this.router.navigateByUrl(localStorage.getItem('previousUrl') ?? '/'),
+      );
     }
   }
 }

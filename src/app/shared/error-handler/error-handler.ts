@@ -2,6 +2,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { ErrorHandler, Injectable, Injector, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { NotificationsService } from '../../services/notifications/notifications.service';
+
 @Injectable()
 export class CustomErrorHandler implements ErrorHandler {
   constructor(
@@ -11,15 +13,17 @@ export class CustomErrorHandler implements ErrorHandler {
 
   handleError(err): void {
     const router = this.injector.get(Router);
+    const notificationsService = this.injector.get(NotificationsService);
 
     if (err instanceof HttpErrorResponse) {
-      // backend returned unsuccessful response codes such as 404, 500 etc.
-      console.info('Backend returned status: ', err.status);
-      console.info('Response body:', err.message);
+      notificationsService.error(err.message);
 
-      this.zone.run(() => router.navigateByUrl('/login'));
+      this.zone.run(() => {
+        localStorage.setItem('previousRoute', location.pathname);
+        router.navigateByUrl('/login');
+      });
     } else {
-      console.info('An error occurred:', err.message);
+      notificationsService.error(err.message);
     }
   }
 }
