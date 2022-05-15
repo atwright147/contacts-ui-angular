@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Content, ContextMenuService } from '../../services/context-menu/context-menu.service';
 
@@ -7,7 +7,7 @@ import { Content, ContextMenuService } from '../../services/context-menu/context
   templateUrl: './context-menu.component.html',
   styleUrls: ['./context-menu.component.scss']
 })
-export class ContextMenuComponent {
+export class ContextMenuComponent implements OnInit {
   menu$ = this.contextMenuService.menu$;
   show = false;
   target: HTMLElement | null = null;

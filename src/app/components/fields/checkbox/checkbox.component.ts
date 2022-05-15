@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input, ViewChild, ElementRef } from '@angular/core';
+import { AfterViewInit, Component, forwardRef, Input, ViewChild, ElementRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, NG_VALIDATORS, AbstractControl, ValidationErrors } from '@angular/forms';
 
 @Component({
@@ -18,7 +18,7 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor, NG_VALIDATORS, AbstractControl
     },
   ],
 })
-export class CheckboxComponent implements ControlValueAccessor {
+export class CheckboxComponent implements ControlValueAccessor, AfterViewInit {
   control: AbstractControl;
 
   @ViewChild('input', { static: false }) input: ElementRef<HTMLInputElement>;

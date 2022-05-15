@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input, ViewChild, ElementRef } from '@angular/core';
+import { AfterViewInit, Component, forwardRef, Input, ViewChild, ElementRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, NG_VALIDATORS, AbstractControl, ValidationErrors } from '@angular/forms';
 
 @Component({
@@ -18,7 +18,7 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor, NG_VALIDATORS, AbstractControl
     },
   ]
 })
-export class InputComponent implements ControlValueAccessor {
+export class InputComponent implements ControlValueAccessor, AfterViewInit {
   @ViewChild('input', { static: false }) input: ElementRef<HTMLInputElement>;
 
   @Input() type = 'text';
