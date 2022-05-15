@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
+import { NotificationsService } from '../../services/notifications/notifications.service';
+
 @Component({
   selector: 'app-contacts-edit',
   templateUrl: './contacts-edit.component.html',
@@ -16,6 +18,7 @@ export class ContactsEditComponent implements OnInit {
     private readonly http: HttpClient,
     private readonly fb: FormBuilder,
     private readonly route: ActivatedRoute,
+    private readonly notificationsService: NotificationsService,
   ) {
     // fixes issue where form was rendering before initiated
     // see: https://github.com/KillerCodeMonkey/ngx-quill/issues/187#issuecomment-695796458
@@ -49,8 +52,8 @@ export class ContactsEditComponent implements OnInit {
     }
 
     this.http.request(METHOD, '/api/v1/contacts', { body: this.form.value }).subscribe(
-      () => console.info('submitted'),
-      (err) => console.info(err),
+      () => this.notificationsService.success('Contact saved'),
+      (err) => this.notificationsService.error(err.message),
     );
   }
 }

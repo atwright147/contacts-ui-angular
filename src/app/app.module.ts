@@ -30,6 +30,7 @@ import { ContactsEditComponent } from './pages/contacts-edit/contacts-edit.compo
 import { CheckboxComponent } from './components/fields/checkbox/checkbox.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SpinnerLogoComponent } from './components/spinner-logo/spinner-logo.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
 
 const materialModules = [
   MatIconModule
@@ -59,6 +60,7 @@ const materialModules = [
     CheckboxComponent,
     SpinnerComponent,
     SpinnerLogoComponent,
+    NotificationsComponent,
   ],
   imports: [
     BrowserModule,

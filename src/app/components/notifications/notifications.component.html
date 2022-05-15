@@ -1,0 +1,20 @@
+<div class="notifications">
+  <section *ngFor="let notification of notifications$ | async" class="notification {{notification.type}}">
+    <div class="icon column">
+      <mat-icon aria-hidden="true">check_circle</mat-icon>
+    </div>
+
+    <p *ngIf="notification.body" class="body column">
+      {{notification.body}}
+    </p>
+
+    <button
+      (click)="remove(notification)"
+      type="button"
+      class="close column"
+      aria-label="Close"
+    >
+      <mat-icon aria-hidden="true">close</mat-icon>
+    </button>
+  </section>
+</div>
