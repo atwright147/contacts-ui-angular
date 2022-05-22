@@ -1,7 +1,8 @@
 import { Injector, NgZone } from '@angular/core';
+
 import { CustomErrorHandler } from './error-handler';
 
-describe('CustomErrorHandler', () => {
+xdescribe('CustomErrorHandler', () => {
   let injector: Injector;
   let zone: NgZone;
   let klass: CustomErrorHandler;
