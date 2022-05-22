@@ -1,0 +1,38 @@
+.field {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.search {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+}
+
+.form {
+  padding: 1.5rem;
+}
+
+button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0;
+}
+
+input {
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+button,
+input {
+  background-color: white;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}

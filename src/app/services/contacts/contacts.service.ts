@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -9,6 +10,7 @@ import { Contact } from '../../types/contact.types';
   providedIn: 'root'
 })
 export class ContactsService {
+  readonly searchForm: FormGroup;
   private readonly url = '/api/v1/contacts';
 
   private readonly _contacts = new BehaviorSubject<Contact[]>([]);
@@ -19,7 +21,12 @@ export class ContactsService {
 
   constructor(
     private readonly http: HttpClient,
-  ) { }
+    private readonly fb: FormBuilder,
+  ) {
+    this.searchForm = this.fb.group({
+      term: this.fb.control('', [Validators.required, Validators.minLength(3)]),
+    });
+  }
 
   get(): Observable<Contact[]> {
     return this.http

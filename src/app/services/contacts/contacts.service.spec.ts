@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ContactsService } from './contacts.service';
 
@@ -9,7 +10,10 @@ describe('ContactsService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule ],
+      imports: [
+        HttpClientTestingModule,
+        ReactiveFormsModule,
+      ],
     });
     service = TestBed.inject(ContactsService);
     httpTestingController = TestBed.inject(HttpTestingController);

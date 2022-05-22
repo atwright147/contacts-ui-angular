@@ -1,6 +1,8 @@
+<app-contact-search></app-contact-search>
+
 <ul class="contacts-list">
   <li
-    *ngFor="let contact of contacts$ | async"
+    *ngFor="let contact of displayContacts$ | async"
     (click)="select(contact)"
     class="contact"
   >

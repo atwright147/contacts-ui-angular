@@ -1,0 +1,11 @@
+<form [formGroup]="searchForm" (submit)="onSubmit()" class="form">
+  <div class="field">
+    <div class="search">
+      <input type="text" id="term" name="term" formControlName="term" autocomplete="off">
+      <button aria-label="Search">
+        <mat-icon aria-hidden="true">search</mat-icon>
+      </button>
+    </div>
+    <label for="term">Search for a contact</label>
+  </div>
+</form>

@@ -31,6 +31,7 @@ import { CheckboxComponent } from './components/fields/checkbox/checkbox.compone
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SpinnerLogoComponent } from './components/spinner-logo/spinner-logo.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
+import { ContactSearchComponent } from './components/contact-search/contact-search.component';
 
 const materialModules = [
   MatIconModule
@@ -61,6 +62,7 @@ const materialModules = [
     SpinnerComponent,
     SpinnerLogoComponent,
     NotificationsComponent,
+    ContactSearchComponent,
   ],
   imports: [
     BrowserModule,

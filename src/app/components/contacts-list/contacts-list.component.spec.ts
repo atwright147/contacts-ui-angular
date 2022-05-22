@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ContactsListComponent } from './contacts-list.component';
 
@@ -11,7 +12,10 @@ describe('ContactsListComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ContactsListComponent ],
-      imports: [ HttpClientTestingModule ],
+      imports: [
+        HttpClientTestingModule,
+        ReactiveFormsModule,
+      ],
     })
     .compileComponents();
 
