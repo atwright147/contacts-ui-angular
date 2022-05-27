@@ -8,8 +8,6 @@ import { ContactsService } from './services/contacts/contacts.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
-
   constructor(
     private readonly contactsService: ContactsService,
   ) { }
