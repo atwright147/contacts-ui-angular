@@ -31,7 +31,17 @@ export class ContactsListComponent implements OnInit, OnDestroy {
       tap(([searchTerm, contacts]) => {
         let filteredContacts = contacts;
         if (searchTerm.term) {
-          filteredContacts = contacts.filter((contact) => contact.firstName.toLowerCase().includes(searchTerm.term.toLowerCase()))
+          filteredContacts = contacts.filter((contact) => {
+            if (contact.firstName.toLowerCase().includes(searchTerm.term.toLowerCase())) {
+              return true;
+            }
+
+            if (contact.lastName.toLowerCase().includes(searchTerm.term.toLowerCase())) {
+              return true;
+            }
+
+            return false;
+          });
         }
 
         this.displayContacts$.next(filteredContacts);
