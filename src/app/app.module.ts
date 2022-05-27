@@ -32,6 +32,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SpinnerLogoComponent } from './components/spinner-logo/spinner-logo.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { ContactSearchComponent } from './components/contact-search/contact-search.component';
+import { ContactsListHeaderComponent } from './components/contacts-list-header/contacts-list-header.component';
 
 const materialModules = [
   MatIconModule
@@ -63,6 +64,7 @@ const materialModules = [
     SpinnerLogoComponent,
     NotificationsComponent,
     ContactSearchComponent,
+    ContactsListHeaderComponent,
   ],
   imports: [
     BrowserModule,
