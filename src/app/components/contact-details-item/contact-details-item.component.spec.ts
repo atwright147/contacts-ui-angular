@@ -20,6 +20,7 @@ describe('ContactDetailsItemComponent', () => {
   });
 
   it('should create', () => {
+    component.item = [];
     expect(component).toBeTruthy();
   });
 });

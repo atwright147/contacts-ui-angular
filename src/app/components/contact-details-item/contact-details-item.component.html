@@ -8,12 +8,12 @@
       <p>{{item}}</p>
     </ng-container>
 
-    <ng-container *ngIf="itemType === ItemType.EMAILS">
-      <ng-container *ngFor="let email of item">
-        <a [href]="email.email" class="email">{{email.email}}</a>
-        <span *ngIf="email.isPrimary">Primary</span><br>
-      </ng-container>
-    </ng-container>
+    <ul *ngIf="itemType === ItemType.EMAILS" class="emails">
+      <li *ngFor="let email of item" class="email">
+        <a [href]="email.email | prefix: 'mailto:'">{{email.email}}</a>
+        <span *ngIf="email.isPrimary">Primary</span>
+      </li>
+    </ul>
 
     <ng-container *ngIf="itemType === ItemType.ADDRESSES">
       <p class="address" *ngFor="let address of item">{{[address.address1, address.address2, address.address3, address.city, address.county, address.postCode] | join: ',\n'}}</p>

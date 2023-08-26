@@ -1,0 +1,42 @@
+a {
+  display: flex;
+  color: var(--color-main-accent);
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+.menu {
+  position: absolute;
+  width: auto;
+  height: auto;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  list-style-type: none;
+  padding: 1rem;
+}
+
+.menu-item + .menu-item {
+  padding: .5rem inherit;
+}
+
+.btn-link {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.btn-link:hover {
+  background-color: var(--color-main-accent);
+}

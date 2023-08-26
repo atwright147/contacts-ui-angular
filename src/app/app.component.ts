@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { ContactsService } from './services/contacts/contacts.service';
 
@@ -7,9 +7,7 @@ import { ContactsService } from './services/contacts/contacts.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'contacts-ui-angular';
-
+export class AppComponent implements OnInit {
   constructor(
     private readonly contactsService: ContactsService,
   ) { }

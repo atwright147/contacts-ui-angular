@@ -7,7 +7,7 @@ export interface Contact {
   lastName: string,
   jobTitle: string,
   bio: string,
-  emails: string,
+  emails: string[],
   dateOfBirth: string,
   addresses: Address[],
   comments: string[],

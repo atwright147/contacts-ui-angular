@@ -21,7 +21,7 @@ export class ContactDetailsItemComponent {
   readonly ItemType = ItemType;
   itemType: ItemType;
 
-  @Input() item: any;
+  @Input() item: any = [];
   @Input() label = '';
   @Input() set type(type: ItemType) {
     this.itemType = ItemType[getEnumKeyByEnumValue(ItemType, type)];

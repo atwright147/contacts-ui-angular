@@ -1,0 +1,85 @@
+.notifications {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+}
+
+.notification + .notification {
+  margin-top: 0.5rem;
+}
+
+.notification {
+  border-radius: 5px;
+  height: 100%;
+  overflow: hidden;
+  max-width: 31rem;
+
+  display: grid;
+  grid-template-columns: min-content auto min-content;
+  grid-template-areas: "icon body close";
+
+  &.info {
+    color: var(--info-dark-bg);
+    border-left: 5px solid var(--info-dark-bg);
+    background-color: var(--info-light-bg);
+
+    .close {
+      background-color: var(--info-medium-bg);
+    }
+  }
+
+  &.success {
+    color: var(--success-dark-bg);
+    border-left: 5px solid var(--success-dark-bg);
+    background-color: var(--success-light-bg);
+
+    .close {
+      background-color: var(--success-medium-bg);
+    }
+  }
+
+  &.warning {
+    color: var(--warning-dark-bg);
+    border-left: 5px solid var(--warning-dark-bg);
+    background-color: var(--warning-light-bg);
+
+    .close {
+      background-color: var(--warning-medium-bg);
+    }
+  }
+
+  &.error {
+    color: var(--error-dark-bg);
+    border-left: 5px solid var(--error-dark-bg);
+    background-color: var(--error-light-bg);
+
+    .close {
+      background-color: var(--error-medium-bg);
+    }
+  }
+}
+
+.column {
+  display: flex;
+  align-items: center;
+  padding: .75rem;
+}
+
+.body {
+  padding-left: 0;
+}
+
+.close {
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  flex-grow: 0;
+  background-color: transparent;
+  margin-left: auto;
+  font-size: 0;
+}
+
+mat-icon {
+  pointer-events: none;
+}
